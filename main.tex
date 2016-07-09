@@ -1,0 +1,70 @@
+\documentclass[twoside]{article}
+\pagestyle{empty}
+\newcommand{\classname}{Math 1325 }
+
+\usepackage{pgffor,graphicx,amsmath,amssymb,multicol}
+\usepackage{tabularx,wrapfig}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage[letterpaper, portrait]{geometry}
+\geometry{left=.5in,right=.5in,top=.3in,bottom=.7in}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\newcommand{\drawgraph}{\\\includegraphics[width=3in]{img/graph}}
+\newcommand{\drawnumberline}{\\[.5cm]\includegraphics[width=3in]{img/numberline}}
+\newcommand{\blank}{\line(1,0){100}}
+\newcommand{\img}[1]{\\\noindent	\includegraphics[width=1.5in]{img/#1} }
+\newcommand{\imgA}[1]{	\includegraphics[width=1.5in]{img/#1} }
+\newcommand{\imgB}[1]{\includegraphics[width=2in]{img/#1}}
+
+
+\newcommand*{\MaxNumOfChapters}{10}% Adjust these two settings for your needs.
+\newcommand*{\MaxNumOfSections}{20}%
+
+\newcommand{\quizheader}[1]{\addtotoc{#1}\noindent\begin{tabularx}{\textwidth}{lYr}Standards Quiz&\begin{centering} \textbf{#1}\end{centering}&Name: \line(1,0){100}\\\classname&&\end{tabularx}\vspace{.5cm}}
+
+\newcommand{\addtotoc}[1]{
+	 \addcontentsline{toc}{subsection}{#1}	
+}	
+
+\newenvironment{questions}
+{ \begin{enumerate}
+    \setlength{\itemsep}{\fill}	}
+{\vfill \end{enumerate}                  } 
+
+\newcommand{\standardquestion}[3][\fill]{
+    \noindent
+    \framebox[1.2\width]{0 1 2 3 4} \textbf{ S#3}:       
+    \input{./questions/#2}
+    \vspace{#1}
+    \hspace{\fill}\\
+}
+
+\begin{document}
+\thispagestyle{empty}
+\vspace{.5in}
+\title{\classname Quizzes}\date{}
+\maketitle
+\tableofcontents
+\noindent
+\newpage\newpage
+\foreach \c in {1,2,...,\MaxNumOfChapters}{
+    \addcontentsline{toc}{section}{Quarter \c}
+    \newpage
+    \foreach \s in {1,2,...,\MaxNumOfSections}{
+        \IfFileExists{./quizzes/\c.\s} {
+			\input{./quizzes/\c.\s}
+	    		\newpage
+        }{
+                % files does not exist, so nothing to do
+        }
+    }
+}
+
+\end{document}

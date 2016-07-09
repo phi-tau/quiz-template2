@@ -2,8 +2,6 @@ This LaTeX problem repository and quiz template that allows teachers to build qu
 
 ##Folders
 * **img** contains image files
-* **questions** contains individual quiz items
- * naming doesn't matter. I do (the section or standard number)-(quiz week).tex, i.e., 10.4-5.tex 
 * **quizzess** contians quiz files, which are collections of lins to questions**
  * naming does matter here, so that the for loop in main.tex will select the file
  * Use #-#.tex. I use the first number to be quarter or grading period, and then the second as the week number
@@ -22,10 +20,7 @@ In questions, you can use
 
 Then create the header using ```\quizheader{QUIZ_NAME}{NUMBER_OF_POINTS}```. Edit the quiz header command in main.tex to your liking.
 
-Insert questions using ```\question{QUESTIONFILENAME}{QUESTIONNUMBER}```
-* QUESTIONFILENAME doesn't use an extension (must be .tex in the questions folder)
-* QUESTIONNUMBER could also be text. I generally number question by their standard number in the course or by section number in the book.
-
+Insert questions using ```\question{[QUESTIONNUMBER}{QUESTIONTEXT}```
 
 To compile into a pdf, use the command below. It needs to be run twice to generate the table of contents.
 ```

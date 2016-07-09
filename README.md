@@ -1,4 +1,4 @@
-This Latex problem repository and quiz template that allows teachers to build quizzes from individual question files. It is designed to fit my grading scheme, I'm sure you'll want to edit before it is useful to you.
+This LaTeX problem repository and quiz template that allows teachers to build quizzes from individual question files. It is designed to fit my grading scheme, I'm sure you'll want to edit before it is useful to you.
 
 ##Folders
 * **img** contains image files

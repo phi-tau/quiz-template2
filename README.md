@@ -17,14 +17,10 @@ This Latex problem repository and quiz template that allows teachers to build qu
 In questions, you can use
 * ```\drawgraph``` to insert a grid for students to answer with a 2-D graph
 * ```\blank``` to insert a 100pt blank
-* ```\imgA{file}``` to insert a large image (must be in img directory, no file extensions)
-* ```\imgB{file}``` to insert a small image (must be in img directory, no file extensions)
+* ```\imgA{file}``` to insert a small image (must be in img directory, no file extensions)
+* ```\imgB{file}``` to insert a large image (must be in img directory, no file extensions)
 
-In quizzes, you set options using
-* ```\newcommand{\sectionname}{QUIZNAME}```
-* ```\newcommand{\points}{NUMBEROFPOINTSONQUIZ}```
-
-Then create the header using ```\quizheader{\sectionname}{\points}```. Edit the quiz header command in main.tex to your liking.
+Then create the header using ```\quizheader{QUIZ_NAME}{NUMBER_OF_POINTS}```. Edit the quiz header command in main.tex to your liking.
 
 Insert questions using ```\question{QUESTIONFILENAME}{QUESTIONNUMBER}```
 * QUESTIONFILENAME doesn't use an extension (must be .tex in the questions folder)

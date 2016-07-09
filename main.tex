@@ -17,6 +17,7 @@
     linkcolor=black,
     urlcolor=black
 }
+\newcommand{\vf}{\\\vspace{\fill}}
 \newcommand{\drawgraph}{\\\includegraphics[width=3in]{img/graph}}
 \newcommand{\drawnumberline}{\\[.5cm]\includegraphics[width=3in]{img/numberline}}
 \newcommand{\blank}{\line(1,0){100}}
@@ -33,18 +34,12 @@
 	 \addcontentsline{toc}{subsection}{#1}	
 }	
 
-\newenvironment{questions}
-{ \begin{enumerate}
-    \setlength{\itemsep}{\fill}	}
-{\vfill \end{enumerate}                  } 
-
 \newcommand{\question}[3][\fill]{
-    \noindent
-    \framebox[1.2\width]{1 2 3 4 5} \textbf{#3}:       
-    \input{./questions/#2}
-    \vspace{#1}
-    \hspace{\fill}\\
-}
+        \noindent
+            \framebox[1.2\width]{1 2 3 4 5} \textbf{#2}: #3
+                    \vspace{#1}
+                        \hspace{\fill}\\
+                    }
 
 \begin{document}
 \thispagestyle{empty}

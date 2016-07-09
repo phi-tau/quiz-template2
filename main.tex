@@ -1,6 +1,7 @@
 \documentclass[twoside]{article}
 \pagestyle{empty}
-\newcommand{\classname}{Math 1325 }
+\newcommand{\classname}{ <++> }
+\newcommand{\teacher}{ <++> }
 
 \usepackage{pgffor,graphicx,amsmath,amssymb,multicol}
 \usepackage{tabularx,wrapfig}
@@ -27,7 +28,7 @@
 \newcommand*{\MaxNumOfChapters}{10}% Adjust these two settings for your needs.
 \newcommand*{\MaxNumOfSections}{20}%
 
-\newcommand{\quizheader}[1]{\addtotoc{#1}\noindent\begin{tabularx}{\textwidth}{lYr}Standards Quiz&\begin{centering} \textbf{#1}\end{centering}&Name: \line(1,0){100}\\\classname&&\end{tabularx}\vspace{.5cm}}
+\newcommand{\quizheader}[2]{\addtotoc{#1}\noindent\begin{tabularx}{\textwidth}{lYr}\classname&\begin{centering} \textbf{#1}\end{centering}&Name: \line(1,0){100}\\\teacher&&Grade: \line(1,0){20}/#2\end{tabularx}\vspace{.5cm}}
 
 \newcommand{\addtotoc}[1]{
 	 \addcontentsline{toc}{subsection}{#1}	
@@ -38,9 +39,9 @@
     \setlength{\itemsep}{\fill}	}
 {\vfill \end{enumerate}                  } 
 
-\newcommand{\standardquestion}[3][\fill]{
+\newcommand{\question}[3][\fill]{
     \noindent
-    \framebox[1.2\width]{0 1 2 3 4} \textbf{ S#3}:       
+    \framebox[1.2\width]{1 2 3 4 5} \textbf{#3}:       
     \input{./questions/#2}
     \vspace{#1}
     \hspace{\fill}\\
